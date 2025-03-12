@@ -1,0 +1,106 @@
+<html>
+    <head>
+	    <title>Aula 02</title>
+        <script>
+            console.log("Olá Mundo!");//mensagem
+            console.warn("Olá Warning!");//aviso
+            console.error("Olá Erro!");//erro
+
+            //demonstrando tipagem fraca
+            var fruta;
+            console.log(fruta);
+            console.log(typeof fruta); //typeof: tipo da variável
+
+            fruta = "Abacaxi"; //atribuindo valor a variável
+            console.log(fruta);
+            console.log(typeof fruta); //tipo: string
+            
+            var preco;
+            console.log(typeof preco);
+            preco = 149.50;
+            console.log(preco);
+            console.log(typeof preco); //tipo: number
+
+            //demonstrando tipagem dinâmica
+            preco = true;
+            console.log(preco);
+            console.log(typeof preco); //tipo: boolean
+            preco = "Está muito caro";
+            console.log(typeof preco); //tipo: string
+
+            //redeclarando variável
+            var preco = 247.32;
+            console.log("Novo valor de preço: "+preco); //concatenação
+
+            let piloto = "Sainz";
+            console.log("Piloto: ", piloto); //outra forma de concatenação
+            piloto = "Verstappen"; // atribuindo outro valor a variável
+            console.log("Piloto: ", piloto); 
+            //let piloto = "pipipipopopo"; //ERROR
+
+            const USUARIO = "Alex"; //variável do tipo const sempre em letra maiúscula para diferencia-la dos demais tipos de variável
+            console.log("Usuário: ", USUARIO);
+            console.log("Tipo: ", typeof USUARIO);
+            //const USUARIO = "Junior"; //ERROR, const não se redeclara
+            //USUARIO = "Junior"; //ERROR, const não se altera 
+
+            /* QUIZ */
+            if(true){
+                var varVariable = "I am VAR";
+                let letVariable = "I am LET";
+                const constVariable = "I am CONST";
+            }
+
+            console.log(varVariable); //I am VAR
+            //console.log(letVariable); //ERROR pois está fora do escopo
+            //console.log(constVariable); //ERROR pois está fora do escopo
+            let letVariable = "Redeclarei a LET";
+            console.log(letVariable);
+            const constVariable = "rapaaaaz, tava só testando";
+            console.log(constVariable);
+
+            function testScope(){
+                var insideFunction = "Exists inside function";
+                return insideFunction;
+            }
+            
+            testScope();
+            console.log(testScope()); //Exists inside function
+
+            if(true){
+                let carro = "Porsche";
+                console.log("Carro: ", carro);
+                
+                if(true){ //herança
+                    console.log("Carro outro bloco: ", carro);
+                }
+
+            }
+            //console.log(carro);//ERROR, fora do escopo
+
+            let mediaKmL = 5.5;
+            let carro = "Lamborghini";
+            if(carro == "Porsche" || mediaKmL <= 5){
+                console.log("Se lascou!");
+            }else{
+                console.log("Economia, já pode pagar um Arnaldos para o professor!");
+            }
+
+            let cincoNumerico = 5;
+            let cincoString = "5";
+
+            if(cincoNumerico == cincoString){
+                console.log("Cinco é igual a cinco: 5 == '5'");
+            }
+
+            if(cincoNumerico === cincoString){
+                console.log("Cinco é estritamente igual a cinco: 5 === '5'");
+            }else{
+                console.log("Cinco não é estritamente igual a cinco: 5 !== '5'");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Aula #02</h1>
+    </body>
+</html>
