@@ -1,0 +1,83 @@
+ <html>
+    <head>
+        <title>Aula 03 - Revisão de JS</title>
+        <script>
+            console.log("Olá mundo!");
+            
+            /* Formatos primário */
+            //Varíavel do tipo String
+            let texto;
+            texto = "Esse é um texto inserido na variável!";
+            console.log("Conteúdo: ", texto);
+            console.log("Tipo: ", typeof texto);
+
+            //Variável do tipo Number
+            let age;
+            age = 22;
+            console.log("Valor de Age: ", age);
+            console.log("Tipo: ", typeof age);
+
+            //Variável do tipo Boolean
+            let isAdmin;
+            isAdmin = true;
+            console.log("Valor de isAdmin: ", isAdmin);
+            console.log("Tipo: ", typeof isAdmin);
+
+            //Variável do tipo undefined
+            let cor;
+            console.log("Tipo de cor: ", typeof cor);
+
+            //Variável do tipo null
+            let potencia = null;
+            console.log("Valor de potencia: ", potencia);
+            console.log("Tipo de null: ", typeof potencia);
+
+            //Variável do tipo Symbol
+            let id = Symbol("id");
+            console.log("Valor de id", id);
+            console.log("Tipo de id", typeof id);
+
+            /* Formatos não primários */
+            
+            //Objeto
+            let pessoa = {nome: "Alex", idade: 19, salario: 95000.23};
+            console.log("Valor de pessoa: ", pessoa);
+            console.log("Tipo de pessoa: ", typeof pessoa);
+            console.log("Salário fora os benefícios: ", pessoa.salario)
+
+            //Array
+            let numeros = [1, 2, 3, 4, 5];
+            console.log("Valor de números: ", numeros);
+            console.log("Tipo: ", typeof numeros);
+
+            let professores = [
+                {
+                    nome: "Alex", 
+                    materia: "Top. Esp."
+                }, 
+                {
+                    nome: "Juliana",
+                    materia: "PHP"
+                },
+                {
+                    nome: "Liliane",
+                    materia: "Java"
+                },
+                {
+                    nome: "João Vitor",
+                    materia: "Algoritmos"
+                }
+            ];
+            console.log("Valor de professores: ", professores);
+            console.log("Tipo de professores: ", typeof professores);
+            console.log("Professor na posição 3: ", professores[3]);
+            console.log("Materia do prof 3: ", professores[3].materia);
+            professores[3].materia = "Lógica de Programação";
+            console.log("Materia do prof 3: ", professores[3].materia);
+            console.log(professores);
+        </script>
+    </head>
+    <body>
+        <h1>Aula #03 - Revisão de Javascript</h1>
+    </body>
+</html>
