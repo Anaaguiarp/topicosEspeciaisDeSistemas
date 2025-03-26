@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de Repetição</title>
+    <script>
+        //for
+        /*for(let i=0; i < 10; i++){
+            console.log("Valor de i (for): ", i);
+        }
+        let j=0;
+        for(; j <= 5; j++){
+            console.log("Valor de j (for): ", j);
+        }
+        let k = 1;
+        for(;;){
+            console.log("Valor de k (for): ", k);
+            k++
+            if(k > 7){
+                break;
+            }
+        }
+        let o = 0;
+        //do-while
+        do{
+            o++;
+            console.log("Valor de 'o' (do-while):", o);
+        }while(o<10);
+        
+        let n = 1;
+        do{
+            console.log("Valor de n (do-while): ", n);
+            n++;
+        }while(n < 7);
+
+        o = 0;
+        //while
+        while(o<=10){
+            console.log("Valor de o (while)", o);
+            o++;
+        }
+        let m=1;
+        while(m<=15){
+            if(m === 5){
+                m++;
+                continue;
+            }
+            console.log("Valor de m (while): ", m);
+        }*/
+
+        //Voltando para estruturas condicionais
+        let fruta = "Abacaxi";
+
+        //If ternário é composto de uma condição de teste, '?' valor se verdadeiro
+        //menos verboso
+        fruta == "Abacaxi" ? console.log("Amarelo") : console.log("Vermelho");
+        
+        if(fruta == "Abacaxi"){
+            console.log("Amarelo");
+        }else{
+            console.log("Vermelho");
+        }
+
+        let sabor = fruta == "Abacaxi" ? "Azedo" : "Salgado";
+        console.log("Sabor: ", sabor);
+        console.log("Sabor direto: ", fruta == "Abaxaxi" ? "Azedo" : "Salgado");
+
+        let preco = fruta == "Abacaxi" ? "5.45" : fruta == "Melância" ? "3.20" : "Valor indefinido!";
+        console.log("Preço: ", preco);
+
+        let cpfVindoDoFront = "12345678910";
+        let cpf = cpfVindoDoFront != null ? cpfVindoDoFront : "Não informado.";
+        console.log("CPF: ", cpf);
+        
+        /*Se tem => true
+        Se não tem => false*/
+
+        if(!true) console.log("Verdadeiro");
+        console.log("XPTO");
+    </script>
+</head>
+<body>
+    <h1>Estruturas de Repetição</h1>
+    <p>E um pouco mais de Estruturas Condicionais...</p>
+</body>
+</html>
