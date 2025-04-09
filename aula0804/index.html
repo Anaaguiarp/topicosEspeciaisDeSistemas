@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>aula0804</title>
+        <script>
+            //Função declarada simples
+            cumprimento();
+
+            function cumprimento(){
+                console.log("Boa noite!");
+            }
+
+            //Função declarada simples com parâmetros
+            function soma(a, b){
+                const resultado = a + b;
+                console.log("Resultado da soma: ", resultado);
+            }
+            soma(10, 15);
+
+            function divide(x, y){
+                const resultado = y === 0 ? "Não pode dividir por 0" : x / y;
+                console.log("Resultado da divisão: ", resultado);
+            }
+            divide(10, 0);
+            divide(100, 5);
+
+            //Função declarada simples com parâmetro com valor padrão (default)
+            function multiplica(a = 1, b = 1){
+                const resultado = a * b;
+                console.log("Resultado da Multiplicação: ", resultado);
+            }
+            multiplica(10, 20);
+
+            //Função declarada com parâmetros e retorno
+            function subtrai(v1, v2){
+                const resultado = v1 - v2;
+                return resultado;
+            }
+            let res = subtrai(50, 30);
+            console.log("Resultado da subtração: ", res);
+
+            //Funções aninhadas
+            function expo(a, b){
+                function validaValores(x, y){
+                    if(x >= 0 && y >= 0){
+                        return true;
+                    }
+                    }
+                    if(validaValores(a, b)){
+                        return a ** b;
+                    }
+                    return 0;
+                }
+            console.log("Resultado da exponenciação: ", expo(5, 2));
+
+            //Função anônima
+            let anoni = function(){
+                console.log("Executando de dentro da função anônima!")
+            }
+            anoni();
+
+            //Calculando média
+            const calcularMedia = function (notas){
+                const total = notas.reduce(function(acumulado, notas){
+                    return acumulado + notas;
+                }, 0);
+                console.log("Total: ", total);
+                return total / notas.length;
+            }
+
+            const valorDeNotas = [20, 30, 45, 72, 11];
+            let media = calcularMedia(valorDeNotas);
+            console.log("Média de notas: ", media);
+
+            const calculaTotalPedido = function(itensPedido){
+                return itensPedido.reduce(function(acumulado, atual){
+                    return acumulado + atual;
+                }, 0);
+            }
+            console.log("Total do pedido: ", calculaTotalPedido([1.45, 2.9, 45.29, 128.72]));
+
+            //Método forEach
+            [1, 2, 3, 4 , 5].forEach(function(atual){
+                console.log("Valor", atual, " dobrado:", atual * 2);
+            });
+
+            //Arrow Function - Função de seta
+            let alarme = (horario) => {
+                console.log("Alarme disparando às: ", horario);
+            }
+
+            alarme("21:45");
+
+            ["Banana", "Abacaxi", "Tomate"].forEach((atual) => console.log(atual));
+        </script>
+    </head>
+    <body>
+        <h1>Aula #06 - Funções</h1>
+    </body>
+</html>
