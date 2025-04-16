@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Aula 1504</title>
+        <script>
+            const valorStr = "Esse não é um objeto";
+            //const valorStr = `{"id": 1, "nome": "Alex"}`;
+            try{ //envolver bloco de código que pode gerar algum erro
+                const usuario = JSON.parse(valorStr);
+                console.log("Nome do usuário: ", usuario.nome);
+            }catch(error){ //capturar e tratar esse erro
+                console.error("Erro na conversão: ", error);
+            }
+            console.log("Olá, mundo!")
+
+            let pessoa;
+            try{
+                console.log(pessoa.nome);
+            }catch(error){
+                console.warn("Erro ao acessar propriedade nome: ", error);
+            }finally{ //bloco executado após o try-catch independente do resultado
+                console.log("Fechando conexão!");
+            }
+
+            function dividir (a, b){
+                if(b === 0){
+                    throw new Error("Não é possível dividir por 0");
+                }
+                return a / b;
+            }
+
+            try{
+                let resultado = dividir(10, 0);
+                console.log("Resultado: ", resultado);
+            }catch(error){
+                console.log("Erro ao dividir! ", error);
+            }
+
+            function cadastrarPessoa(nome = "Não informado", idade = 0){
+                if(idade < 0){
+                    throw new Error("Idade inválida!");
+                }
+                let pessoa = {"nome": nome, "idade": idade};
+                console.log("Pessoa cadastrada: ", pessoa.nome);
+            }
+
+            try{
+                cadastrarPessoa("Alex", 19);
+            }catch(error){
+                console.error("Erro ao cadastrar pessoa: ", error);
+            }
+
+            //Tratamento de exceções
+            const enviarMensagem = mensagem => {
+                try{
+                    if(!mensagem){
+                        throw new Error("Mensagem inválida!");
+                    }
+                    console.log("Mensagem enviada: ", mensagem);
+                }catch(error){
+                    console.log("Erro ao enviar mensagem: ", error);
+                }
+            }
+            enviarMensagem("Mensagem teste");
+            enviarMensagem("");
+            enviarMensagem();
+            
+            /*------------------------------------------ REST parameters ------------------------------------------*/
+            function sum(...numbers){
+                return numbers.reduce((acumulado, atual) => acumulado + atual, 0)}  //array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+            console.log("Resultado: ", sum(1, 2, 3, 4, 5, 6, 50, 28));
+
+            //juntando elementos em um único objeto
+            const juntar = (...palavras) => palavras.join(" - "); //adiciona um array de string como separador
+            console.log(juntar("Olá", "Alex", "seja", "bem", "vindo")); 
+
+            const separarPrimeiroDoResto = (primeiro, segundo, ...resto) => {
+                console.log("Primeiro: ", primeiro);
+                console.log("Segundo: ", segundo);
+                console.log("Outros: ", resto); //mostrar como array
+                //console.log("Outros: ", ...resto); //mostrar como inteiro
+            }
+            separarPrimeiroDoResto(1, 2, 3, 4, 5, 6, 7);
+
+            const maiores = pessoas => pessoas.filter(pessoa => pessoa.idade >= 18); //array.filter(function(currentValue, index, arr), thisValue), filtrar dados dentro do array
+            const arrayPessoas = [
+                {"nome": "Alex", "idade": 19},
+                {"nome": "Juliana", "idade": 22},
+                {"nome": "Helton", "idade": 16}
+            ];
+            const pessoasMaiores = maiores(arrayPessoas);
+            console.log("Maiores: ", pessoasMaiores);
+
+        </script>
+        <style>
+            body{
+                background-color: black;
+                color: antiquewhite;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Aula 1504</h1>
+    </body>
+</html>
