@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Aula 22/04</title>
+        <script>
+            let globalVar = "Eu sou uma variável GLOBAL";
+            //Exemplo de escopo de variável de funções?
+            function testaEscopo(){
+                let localVar = "Eu sou uma variável LOCAL";
+                console.log(globalVar);
+                console.log(localVar);
+            }
+            testaEscopo();
+            console.log(globalVar);
+            //console.log(localVar);
+
+            //Exemplo de clousure
+            function funcaoExterna(){
+                let variavelExterna = "Eu sou uma variável externa";
+
+                function funcaoInterna(){
+                    console.log(variavelExterna); //Clousure
+                }
+
+                return funcaoInterna;
+            }
+            const minhaFuncaoInterna = funcaoExterna();
+            minhaFuncaoInterna();
+
+            //Função contador
+            function criarContador(){
+                let contador = 0;
+
+                return function () {
+                    contador++;
+                    return contador;
+                }
+            }
+            const contador1 = criarContador();
+            console.log(contador1());
+            console.log(contador1());
+            console.log(contador1());
+
+            //Encapsulando variáveis privadas
+            function criarConta(saldoInicial){
+                //Variável privada
+                let saldo = saldoInicial;
+
+                return {
+                    getSaldo: function () {
+                        return saldo;
+                    },
+                    depositar: function (valor) {
+                        saldo += valor;
+                    },
+                    sacar: function (valor) {
+                        if(valor <= saldo) saldo -= valor;
+                    }
+                }
+            }
+            const conta = criarConta(100);
+            conta.depositar(50);
+            conta.sacar(30);
+            console.log(conta.getSaldo());
+
+            //função que retorna função personalizada
+            function saudacao(nome){
+                return function (mensagem){
+                    console.log(`${mensagem}, ${nome}`);
+                }
+            }
+            const saudarHelton = saudacao("Helton");
+            saudarHelton("Bom dia");
+            saudarHelton("Boa noite");
+
+//-----------------------FUNÇÃO DE ALTA ORDEM-------------------------
+            //Função de alta ordem que recebe uma função como parâmetro
+            function processarArray(array, operacao){
+                for(i = 0; i < array.length; i++){
+                    operacao(array[i]);
+                }
+            }
+            let arrayCriado = [1, 2, 3, 4, 'Xpto'];
+            processarArray(arrayCriado, console.log);
+
+            //Função reduce é uma função de alta ordem
+            const valores = [10, 20, 30];
+            const soma = valores.reduce((acumulado, atual) => acumulado + atual);
+            console.log(soma);
+
+            //Função map  <---------------------------------
+            const numeros = [1, 2, 3, 4];
+            const dobrados = numeros.map(num => num * 2);//Cria uma cópia do vetor, dessa vez com a função executada
+            console.log(dobrados);
+
+        </script>
+    </head>
+    <body>
+        <h1>Aula #08</h1>
+    </body>
+</html>
