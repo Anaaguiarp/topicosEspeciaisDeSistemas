@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2904</title>
+    <script>
+        function cumprimenta(nome){
+            console.log("Olá, " + nome);
+        }
+
+        function cumprimenta2(nome){
+            console.log("Seja bem-vindo, " + nome);
+        }
+
+        function processaEntradaUsuario(callback){
+            let nomeUsuario = "Helton";
+            callback(nomeUsuario);
+        }
+
+        processaEntradaUsuario(cumprimenta);
+        processaEntradaUsuario(cumprimenta2);
+
+        //Callback assíncrono
+        console.log("..:: Início ..::");
+        setTimeout(() => { //executa o código após um tempo determinado, contagem feita em milisegundos
+            console.log("Execução atrasada (setTimeOut)");
+        }, 3 * 1000);
+        console.log("..:: Fim ::..");
+
+        //Callback com função assíncrona
+        function buscarUsuario(callback){
+            setTimeout(() => {
+                callback({nome: "Juliana", idade: 35});
+            }, 1.5 * 1000);
+        }
+
+        buscarUsuario( usuario => {
+            console.log(`Usuário encontrado: ${usuario.nome} - ${usuario.idade}`);
+        });
+        
+    </script>
+</head>
+<body style="background-color: black;">
+    <h1 style="color: aliceblue;">Aula #09</h1>
+</body>
+</html>
