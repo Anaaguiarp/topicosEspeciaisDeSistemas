@@ -1,4 +1,4 @@
-console.log("Funcionando!");
+//console.log("Funcionando!");
 
 /*
 
@@ -58,19 +58,21 @@ app.get("/editarcliente/:idcliente", (req, res) => {
     res.send("Editando o cliente: "+ codigoCliente);
 });
 
-app.put("/cliente", (req, res) =>{
+app.put("/cliente", (req, res) => {
     const {nome, cnpj} = req.body;
-    res.send("Cliente atualizado com sucesso!");
-});
+    //método no banco para atualizar o cliente passando (nome, cnpj)
+    res.send("Cliente atualizado com sucesso");
+})
 
 //Deletando cliente (delete)
 app.delete("/cliente/:idcliente", (req, res) => {
     const codigoCliente = req.params.idcliente;
+    //método no banco de dados para remover um cliente passando o id
     res.send("Cliente removido com sucesso!");
 })
 
 app.get("/fornecedores", (req, res) => {
-    res.end("<html><head><title>Listagem de Fornecedores</title></head><body><h3>Pagina de Listagem de Fornecedores</h3><h5>Lista abaixo:</h5></body></html>");
+    res.end("<html><head><title>Listagem de fornecedores</title></head><body><h3>Página de Listagem de Fornecedores</h3><h5>Lista abaixo</h5></body></html>");
 });
 
 app.listen(3000, () => {
